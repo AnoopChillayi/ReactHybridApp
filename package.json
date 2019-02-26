@@ -11,13 +11,18 @@
     "test-web": "react-scripts test"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "16.8.2",
     "react-art": "^16.8.2",
     "react-dom": "^16.8.2",
     "react-native": "0.58.4",
+    "react-navigation": "^3.3.0",
+    "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
     "react-router-native": "^4.3.0",
-    "react-scripts": "^2.1.5"
+    "react-scripts": "^2.1.5",
+    "redux": "^4.0.1",
+    "redux-thunk": "^2.3.0"
   },
   "devDependencies": {
     "babel-core": "7.0.0-bridge.0",
