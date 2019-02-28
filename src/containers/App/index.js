@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
+import {View,StyleSheet,Text,TextInput} from 'react-native';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-//import Layout from '../../hoc/Layout';
-// import Auth from '../containers/Login';
+import Layout from '../../hoc/Layout';
+ import Auth from '../Auth';
 
 //import Logout from '../containers/Logout';
 import * as actions from '../../Store/actions';
@@ -14,13 +15,14 @@ class App extends Component {
   }
 
   render () {
-    // let routes = (
-    //   <Switch>
-    //     <Route path="/" component={Auth} />
-    //     <Route path="/register" exact component={ComponentName} />
-    //     <Redirect to="/" />
-    //   </Switch>
-    // );
+    let routes = (
+      <Switch>
+        <Route path="/" component={Auth} />
+        {/* <Route path="/register" exact component={R} />
+        <Route path="/otp" exact component={OTPPage} />
+        <Redirect to="/" /> */}
+      </Switch>
+    );
 
     // if ( this.props.isAuthenticated ) {
     //   routes = (
@@ -34,17 +36,14 @@ class App extends Component {
     //   );
     // }
 
-    // return (
-    //   <div>
-    //     <Layout>
-    //       {routes}
-    //     </Layout>
-    //   </div>
-    // );
+    return (
+      <View style={{backgroundColor:'green',flex:1,height:'100vh',justifyContent:'center',alignItems:'center'}}> 
+        {/* <Layout> */}
+          {routes}
+        {/* </Layout> */}
+      </View>
+    );
 
-    return(
-        <div>This App works !</div>
-    )
   }
 }
 
