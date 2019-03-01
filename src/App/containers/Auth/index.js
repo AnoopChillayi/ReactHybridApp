@@ -49,6 +49,48 @@ class Auth extends Component {
                 },
                 valid: false,
                 touched: false
+            },
+            email: {
+                elementType: 'TextInput',
+                elementConfig: {
+                    placeholder:'Email',
+                    placeholderTextColor:Colors.grey_600,
+                    secureTextEntry:false,
+                    editable:true,
+                    numberOfLines:1,
+                    multiline:false,
+                    accessible:true,
+                    accessibilityLabel:'Email'
+                },
+                label:'Email',
+                value: '',
+                validation: {
+                    required: true,
+                    isEmail: true
+                },
+                valid: false,
+                touched: false
+            },
+            mobile: {
+                elementType: 'TextInput',
+                elementConfig: {
+                    placeholder:'Mobile',
+                    placeholderTextColor:Colors.grey_600,
+                    secureTextEntry:false,
+                    editable:true,
+                    numberOfLines:1,
+                    multiline:false,
+                    accessible:true,
+                    accessibilityLabel:'Mobile'
+                },
+                label:'Mobile',
+                value: '',
+                validation: {
+                    required: true,
+                    isEmail: true
+                },
+                valid: false,
+                touched: false
             }
         },
         isSignup: true,

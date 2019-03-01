@@ -3,7 +3,7 @@ import {View,StyleSheet,Text,TextInput} from 'react-native';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Layout from './hoc/Layout';
+//import Layout from './hoc/Layout';
  import Auth from './containers/Auth';
 
 //import Logout from '../containers/Logout';
