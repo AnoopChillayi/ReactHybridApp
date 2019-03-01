@@ -3,11 +3,11 @@ import {View,StyleSheet,Text,TextInput} from 'react-native';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-import Layout from '../../hoc/Layout';
- import Auth from '../Auth';
+import Layout from './hoc/Layout';
+ import Auth from './containers/Auth';
 
 //import Logout from '../containers/Logout';
-import * as actions from '../../Store/actions';
+import * as actions from './Store/actions';
 
 class App extends Component {
   componentDidMount () {
