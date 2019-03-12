@@ -3,8 +3,10 @@ import {View,StyleSheet,Text,TextInput} from 'react-native';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
+
 //import Layout from './hoc/Layout';
  import Auth from './containers/Auth';
+ import Dashboard from './containers/Dashboard'
 
 //import Logout from '../containers/Logout';
 import * as actions from './Store/actions';
@@ -17,10 +19,11 @@ class App extends Component {
   render () {
     let routes = (
       <Switch>
-        <Route path="/" component={Auth} />
+        <Route path="/auth" component={Auth} />
         {/* <Route path="/register" exact component={R} />
-        <Route path="/otp" exact component={OTPPage} />
-        <Redirect to="/" /> */}
+        <Route path="/otp" exact component={OTPPage} /> */}
+        <Route path="/dashboard"  exact component={Dashboard} />
+        <Redirect to="/auth" />
       </Switch>
     );
 
@@ -37,7 +40,7 @@ class App extends Component {
     // }
 
     return (
-      <View style={{backgroundColor:'green',flex:1,height:'100vh',justifyContent:'center',alignItems:'center'}}> 
+      <View style={{backgroundColor:'white',flex:1,height:'100vh',justifyContent:'center'}}> 
         {/* <Layout> */}
           {routes}
         {/* </Layout> */}
