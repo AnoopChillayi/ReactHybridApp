@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {View,StyleSheet,Text,TextInput} from 'react-native';
+import {View,Text} from 'react-native';
 import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import * as actions from './Store/actions';
 
 class App extends Component {
+
   componentDidMount () {
  //   this.props.onTryAutoSignup();
   }
