@@ -41,12 +41,16 @@ class Dashboard extends Component {
         })
     }
     onPressOverLay = () => {
+ 
         this.setState({
             showModal: false
         })
     }
     onPressContainer = () => {
-        alert("on conatiner click")
+    
+        this.setState({
+            showModal: false
+        })
     }
 
     getContactForm() {
@@ -62,7 +66,7 @@ class Dashboard extends Component {
             <Modal
                 onPressOverLay={this.onPressOverLay}
                 onPressContainer={this.onPressContainer}
-                containerStyle={{ alignSelf: 'baseline', margin: 'auto',padding:20,backgroundColor:'white' }}
+                containerStyle={{  margin: 'auto',padding:20,backgroundColor:'white' }}
                 overlayStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
             >
                 {this.getContactForm()}

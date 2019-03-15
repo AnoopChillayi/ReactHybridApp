@@ -9,7 +9,7 @@ const JSX_MODAL = (props) => (
     }}
     >
 
-        <View style={[props.containerStyle]}>
+        <View style={[props.containerStyle,styles.containerDeafultStyle]} onClick={ (e)=>{ e.stopPropagation()}}>
             {props.children}
             <View
                 style={styles.closeButtonStyle}
@@ -41,6 +41,10 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         bottom: 0
+    },
+    containerDeafultStyle:{
+      //  alignSelf: 'baseline',
+        zIndex:1,
     },
     closeButtonStyle: {
         width: 40,
