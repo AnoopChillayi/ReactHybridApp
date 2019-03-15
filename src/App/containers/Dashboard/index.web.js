@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import { View, StyleSheet, Text, Button, ScrollView, Image } from 'react-native';
 import images from '../../themes/images';
+import Modal from '../../components/Modal';
 class Dashboard extends Component {
+
+    state = {
+        showModal: false
+    }
 
     drawChain(lineColor, ) {
 
@@ -30,11 +35,46 @@ class Dashboard extends Component {
         )
     }
 
+    onGetInTouchPress = () => {
+        this.setState({
+            showModal: true
+        })
+    }
+    onPressOverLay=()=>{
+        this.setState({
+            showModal: false
+        })
+    }
+    onPressContainer=()=>{
+        alert("on conatiner click")
+    }
+
+
+    renderModal() {
+        return (
+            <Modal
+
+                onPressOverLay={this.onPressOverLay}
+                onPressContainer={this.onPressContainer}
+                containerStyle={{ backgroundColor:'blue', padding:10,alignSelf:'baseline',margin:'auto'}}
+                overlayStyle={{   backgroundColor: 'rgba(0, 0, 0, 0.7)'}}
+            >
+
+                <View style={{   padding: 15,backgroundColor:'white'}}>
+                    <Image resizeMode="contain" style={{ width: 300, height: 300,backgroundColor:'green' }} source={images.btcoin_bg_jpg} />
+                </View>
+
+
+            </Modal>
+        )
+    }
+
     render() {
         return (
             // <View style={{ backgroundColor: 'gray', flex: 1, margin: 30, borderRadius: 16, padding: 20, }}>
             // background: 'linear-gradient(to right, #22c1c3, #fdbb2d)'
-            <View style={{ backgroundColor: 'black',height:'100vh' }}>
+            <View style={{ backgroundColor: 'black', height: '100vh' }}>
+                {this.state.showModal ? this.renderModal() : null}
 
                 <View style={{ height: 90, flexDirection: 'row', }}>
                     <Image style={{ width: 90, }} source={images.btcoin_logo} />
@@ -46,7 +86,7 @@ class Dashboard extends Component {
 
                     </View>
                     <View style={{ alignItems: 'center', justifyContent: 'center', marginRight: 15 }}>
-                        <Button title={"Get In Touch"} />
+                        <Button title={"Get In Touch"} onPress={this.onGetInTouchPress} />
                     </View>
                 </View>
                 <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
@@ -79,7 +119,7 @@ class Dashboard extends Component {
 
 
 
-                    {this.drawChain()} 
+                    {this.drawChain()}
 
                 </ScrollView>
 
