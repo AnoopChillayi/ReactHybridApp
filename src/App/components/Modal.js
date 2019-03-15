@@ -8,13 +8,18 @@ const JSX_MODAL = (props) => (
         props.onPressOverLay()
     }}
     >
-        <View style={[props.containerStyle]}
-            onClick={(e) => {
-                e.stopPropagation();
-                props.onPressContainer()
-            }}
-        >
+
+        <View style={[props.containerStyle]}>
             {props.children}
+            <View
+                style={styles.closeButtonStyle}
+                onClick={(e) => {
+                    e.stopPropagation();
+                    props.onPressContainer()
+                }}
+            >
+                <Text>{"*"}</Text>
+            </View>
         </View>
     </View>
 );
@@ -36,6 +41,25 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         bottom: 0
+    },
+    closeButtonStyle: {
+        width: 40,
+        height: 40,
+        backgroundColor: 'white',
+        position: 'absolute',
+        borderRadius: 20,
+        top: -20,
+        right: -20,
+        textAlign: 'center',
+        justifyContent: 'center',
+        shadowColor: '#000000',
+        shadowOffset: {
+            width: 0,
+            height: 0
+        },
+        shadowRadius: 5,
+        shadowOpacity: 0.5,
     }
+
 });
 

@@ -40,31 +40,32 @@ class Dashboard extends Component {
             showModal: true
         })
     }
-    onPressOverLay=()=>{
+    onPressOverLay = () => {
         this.setState({
             showModal: false
         })
     }
-    onPressContainer=()=>{
+    onPressContainer = () => {
         alert("on conatiner click")
     }
 
+    getContactForm() {
+        return (
+            <View style={{ backgroundColor: 'white' }}>
+                <Image resizeMode="contain" style={{ width: 300, height: 300, backgroundColor: 'green' }} source={images.btcoin_bg_jpg} />
+            </View>
+        )
+    }
 
     renderModal() {
         return (
             <Modal
-
                 onPressOverLay={this.onPressOverLay}
                 onPressContainer={this.onPressContainer}
-                containerStyle={{ backgroundColor:'blue', padding:10,alignSelf:'baseline',margin:'auto'}}
-                overlayStyle={{   backgroundColor: 'rgba(0, 0, 0, 0.7)'}}
+                containerStyle={{ alignSelf: 'baseline', margin: 'auto',padding:20,backgroundColor:'white' }}
+                overlayStyle={{ backgroundColor: 'rgba(0, 0, 0, 0.7)' }}
             >
-
-                <View style={{   padding: 15,backgroundColor:'white'}}>
-                    <Image resizeMode="contain" style={{ width: 300, height: 300,backgroundColor:'green' }} source={images.btcoin_bg_jpg} />
-                </View>
-
-
+                {this.getContactForm()}
             </Modal>
         )
     }
@@ -119,7 +120,7 @@ class Dashboard extends Component {
 
 
 
-                    {this.drawChain()}
+                    {/* {this.drawChain()} */}
 
                 </ScrollView>
 
